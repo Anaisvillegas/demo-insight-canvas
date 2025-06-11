@@ -1,0 +1,32 @@
+/* Artifact container styles */
+.artifact-container {
+  position: relative;
+  transition: width 0.2s, height 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.artifact-container.dragging,
+.artifact-container.resizing {
+  transition: none;
+  opacity: 0.8;
+}
+
+/* Resize handle */
+.resize-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 15px;
+  height: 15px;
+  cursor: nwse-resize;
+  background: linear-gradient(135deg, transparent 50%, rgba(0, 0, 0, 0.3) 50%);
+  border-bottom-right-radius: 4px;
+  z-index: 10;
+}
+
+/* Smooth transitions for dragging and resizing */
+.artifact-container:not(.dragging):not(.resizing) {
+  transition: left 0.1s, top 0.1s, width 0.2s, height 0.2s;
+}

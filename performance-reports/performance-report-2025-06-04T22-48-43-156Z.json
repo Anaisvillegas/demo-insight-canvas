@@ -1,0 +1,202 @@
+{
+  "timestamp": "2025-06-04T22:48:43.152Z",
+  "summary": {
+    "initializationImprovement": 70.33492822966507,
+    "averageRenderingImprovement": 46.96734059097978,
+    "memoryEfficiency": 0
+  },
+  "detailed": {
+    "legacy": {
+      "initialization": {
+        "time": 209,
+        "memoryDelta": 0,
+        "renderer": {
+          "config": {
+            "type": "html",
+            "enableCache": false,
+            "timeout": 5000
+          },
+          "isInitialized": true,
+          "renderCount": 9
+        }
+      },
+      "rendering": [
+        {
+          "name": "Simple HTML",
+          "success": true,
+          "time": 167,
+          "memoryDelta": 0,
+          "cached": false,
+          "contentSize": 22
+        },
+        {
+          "name": "Complex HTML",
+          "success": true,
+          "time": 173,
+          "memoryDelta": 0,
+          "cached": false,
+          "contentSize": 308
+        },
+        {
+          "name": "Large Content",
+          "success": true,
+          "time": 152,
+          "memoryDelta": 0,
+          "cached": false,
+          "contentSize": 10011
+        },
+        {
+          "name": "React Component",
+          "success": true,
+          "time": 151,
+          "memoryDelta": 0,
+          "cached": false,
+          "contentSize": 111
+        }
+      ],
+      "concurrent": {
+        "totalTime": 165,
+        "memoryDelta": 0,
+        "concurrency": 5,
+        "results": [
+          {
+            "success": true,
+            "renderTime": 150,
+            "cached": false
+          },
+          {
+            "success": true,
+            "renderTime": 150,
+            "cached": false
+          },
+          {
+            "success": true,
+            "renderTime": 150,
+            "cached": false
+          },
+          {
+            "success": true,
+            "renderTime": 150,
+            "cached": false
+          },
+          {
+            "success": true,
+            "renderTime": 150,
+            "cached": false
+          }
+        ],
+        "averageTime": 33
+      },
+      "stats": {
+        "renderCount": 9,
+        "cacheHits": 0,
+        "averageRenderTime": 150
+      }
+    },
+    "optimized": {
+      "initialization": {
+        "time": 62,
+        "memoryDelta": 0,
+        "renderer": {
+          "config": {
+            "type": "html",
+            "enableCache": true,
+            "timeout": 5000,
+            "cacheSize": 50
+          },
+          "isInitialized": true,
+          "renderCount": 4,
+          "cacheHits": 7,
+          "cache": {},
+          "renderTimes": [
+            89,
+            83,
+            81,
+            87,
+            16,
+            16,
+            16,
+            16,
+            16,
+            10,
+            25
+          ]
+        }
+      },
+      "rendering": [
+        {
+          "name": "Simple HTML",
+          "success": true,
+          "time": 90,
+          "memoryDelta": 0,
+          "cached": false,
+          "contentSize": 22
+        },
+        {
+          "name": "Complex HTML",
+          "success": true,
+          "time": 83,
+          "memoryDelta": 0,
+          "cached": false,
+          "contentSize": 308
+        },
+        {
+          "name": "Large Content",
+          "success": true,
+          "time": 81,
+          "memoryDelta": 0,
+          "cached": false,
+          "contentSize": 10011
+        },
+        {
+          "name": "React Component",
+          "success": true,
+          "time": 87,
+          "memoryDelta": 0,
+          "cached": false,
+          "contentSize": 111
+        }
+      ],
+      "concurrent": {
+        "totalTime": 16,
+        "memoryDelta": 0,
+        "concurrency": 5,
+        "results": [
+          {
+            "success": true,
+            "renderTime": 16,
+            "cached": true
+          },
+          {
+            "success": true,
+            "renderTime": 16,
+            "cached": true
+          },
+          {
+            "success": true,
+            "renderTime": 16,
+            "cached": true
+          },
+          {
+            "success": true,
+            "renderTime": 16,
+            "cached": true
+          },
+          {
+            "success": true,
+            "renderTime": 16,
+            "cached": true
+          }
+        ],
+        "averageTime": 3.2
+      },
+      "stats": {
+        "renderCount": 4,
+        "cacheHits": 7,
+        "averageRenderTime": 41.36363636363637,
+        "totalRenders": 11,
+        "cacheHitRate": 63.63636363636363
+      }
+    }
+  }
+}

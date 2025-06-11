@@ -1,0 +1,22 @@
+trigger:
+  - main
+
+variables:
+  imageName: "insight-canvas"
+  imageTag: "v0.1.5-$(build.buildId)"
+  projectName: "$(build.repository.name)"
+pool:
+  vmImage: ubuntu-latest
+
+resources:
+  repositories:
+    - repository: pipelines
+      type: git
+      name: SPGA/pipelines
+
+stages:
+  - template: R-dockerfile-without-tests.yaml@pipelines
+    parameters:
+      imageName: $(imageName)
+      imageTag: $(imageTag)
+      projectName: $(projectName)

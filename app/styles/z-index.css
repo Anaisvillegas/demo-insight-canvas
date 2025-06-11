@@ -1,0 +1,65 @@
+/**
+ * Z-INDEX SYSTEM
+ * 
+ * Este archivo define un sistema coherente de z-index para toda la aplicación.
+ * Usar estas variables CSS para mantener la consistencia en la jerarquía visual.
+ */
+
+:root {
+  /* Base z-index para elementos normales */
+  --z-index-base: 1;
+  
+  /* Z-index para elementos que deben estar por encima de los elementos normales */
+  --z-index-above: 10;
+  
+  /* Z-index para elementos flotantes como tooltips, popovers */
+  --z-index-floating: 100;
+  
+  /* Z-index para artifacts en estado normal */
+  --z-index-artifact: 100;
+  
+  /* Z-index para artifacts durante interacción (arrastre/redimensionamiento) */
+  --z-index-artifact-active: 1000;
+  
+  /* Z-index para la ventana de chat */
+  --z-index-chat: 1500;
+  
+  /* Z-index para modales y diálogos */
+  --z-index-modal: 2000;
+  
+  /* Z-index para notificaciones y toasts */
+  --z-index-notification: 3000;
+}
+
+/* Clases de utilidad para aplicar z-index */
+.z-base {
+  z-index: var(--z-index-base);
+}
+
+.z-above {
+  z-index: var(--z-index-above);
+}
+
+.z-floating {
+  z-index: var(--z-index-floating);
+}
+
+.z-artifact {
+  z-index: var(--z-index-artifact);
+}
+
+.z-artifact-active {
+  z-index: var(--z-index-artifact-active);
+}
+
+.z-chat {
+  z-index: var(--z-index-chat);
+}
+
+.z-modal {
+  z-index: var(--z-index-modal);
+}
+
+.z-notification {
+  z-index: var(--z-index-notification);
+}

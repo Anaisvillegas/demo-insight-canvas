@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imageName
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imageName
+  template:
+    metadata:
+      labels:
+        app: imageName
+    spec:
+      containers:
+        - name: imageName
+          image: {{repositoryFullPath}}/imageName:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              name: http
+          resources:
+            limits:
+              memory: 600Mi
+      imagePullSecrets:
+        - name: gcpregistry
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: imageName-service
+  labels:
+    app: imageName
+spec:
+  type: ClusterIP
+  selector:
+    app: imageName
+  ports:
+    - port: 8080
+      name: http
+      targetPort: 3000
